@@ -1,0 +1,23 @@
+---
+layout: 'layouts/base.html'
+title: 'Posts'
+---
+
+<div class="row">
+  <div class="column">
+    <h1>Posts</h1>
+
+    {% for post in posts %}
+    <div class="post-item">
+      <div class="heading">
+        <h2>
+          <a href="{{ post.title | slugify }}/index.html">{{ post.title }}</a>
+        </h2>
+      </div>
+
+      <p class="description">{{ post.shortDescription | safe }}</p>
+      <div class="more">Published on {{ post.publishDate }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

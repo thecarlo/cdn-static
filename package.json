@@ -1,0 +1,24 @@
+{
+  "name": "cdn-static",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx eleventy --serve",
+    "serve": "npx lite-server --baseDir=dist",
+    "build": "npm run clean && npx eleventy && npx grunt",
+    "clean": "rimraf dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "grunt": "^1.5.3",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-htmlmin": "^3.1.0",
+    "rimraf": "^3.0.2"
+  }
+}

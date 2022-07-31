@@ -1,0 +1,24 @@
+---
+layout: 'layouts/base.html'
+pagination:
+  data: posts
+  size: 1
+  alias: post
+permalink: '{{ post.title | slug }}/'
+---
+
+<div class="row">
+  <div class="column">
+    <div class="post">
+      <h1>{{ post.title }}</h1>
+
+      <div class="publish-date">Published on {{ post.publishDate }}</div>
+
+      {% if post.image !== "" %}
+      <img src="/assets/images/{{post.image}}" alt="an image" />
+      {% endif %}
+
+      <p>{{ post.body | safe }}</p>
+    </div>
+  </div>
+</div>
