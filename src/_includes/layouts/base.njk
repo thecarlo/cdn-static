@@ -2,8 +2,13 @@
 <html lang="en">
   <head>
     {% block head %}
-      <title>{{title}}</title>
-      <meta name="description" content="{{title}}" />
+    {%- if (post) -%}
+    <title>{{ post.title }}</title>
+    <meta name="description" content="{{ post.title }}" />
+    {%- else -%}
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ title }}" />
+    {%- endif -%}
     {% endblock %}
     {% include "head.njk" %}
   </head>
