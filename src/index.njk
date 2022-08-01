@@ -1,5 +1,5 @@
 ---
-layout: 'layouts/base.html'
+layout: 'layouts/base.njk'
 title: 'Posts'
 ---
 
@@ -11,7 +11,7 @@ title: 'Posts'
     <div class="post-item">
       <div class="heading">
         <h2>
-          <a href="{{ post.title | slugify }}/index.html">{{ post.title }}</a>
+          <a href="{{ post.title | slugify }}/">{{ post.title }}</a>
         </h2>
       </div>
 
