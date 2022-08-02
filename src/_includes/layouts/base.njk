@@ -13,6 +13,69 @@
     {% include "head.njk" %}
   </head>
   <body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+      <div class="container px-4 px-lg-5">
+          <a class="navbar-brand" href="index.html">Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/#about">About</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/#contact">Contact</a></li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('/assets/images/home-bg.webp')">
+      <div class="container position-relative px-4 px-lg-5">
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                  <h1>Blog</h1>
+                  <span class="subheading">Welcome to my Blog</span>
+                </div>
+            </div>
+          </div>
+      </div>
+    </header>
+
     <div class="container">{{ content | safe }}</div>
+
+
+    <!-- Footer-->
+    <footer class="border-top">
+      <div class="container px-4 px-lg-5">
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <ul class="list-inline text-center">
+                  <li class="list-inline-item">
+                      <a href="#!">
+                        <i class="fa-brands fa-youtube fa-2x"></i>
+                      </a>
+                  </li>
+                  <li class="list-inline-item">
+                      <a href="#!">
+                        <i class="fa-brands fa-twitter fa-2x"></i>
+                      </a>
+                  </li>
+                  <li class="list-inline-item">
+                      <a href="#!">
+                        <i class="fa-brands fa-github fa-2x"></i>
+                      </a>
+                  </li>
+                </ul>
+                <div class="small text-center text-muted">Copyright &copy; My Blog</div>
+            </div>
+          </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js" integrity="sha512-9GacT4119eY3AcosfWtHMsT5JyZudrexyEVzTBWV3viP/YfB9e2pEy3N7WXL3SV6ASXpTU0vzzSxsbfsuUH4sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js" integrity="sha512-8pHNiqTlsrRjVD4A/3va++W1sMbUHwWxxRPWNyVlql3T+Hgfd81Qc6FC5WMXDC+tSauxxzp1tgiAvSKFu1qIlA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </body>
 </html>
