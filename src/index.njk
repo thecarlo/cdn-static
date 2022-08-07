@@ -8,10 +8,11 @@ title: 'View All Posts'
     <h1>Posts</h1>
 
     {% for post in posts %}
+    {% set slug = post.title | slugify %}
     <div class="post-item">
       <div class="heading">
         <h2>
-          <a href="{{ '/' + post.title | slugify | url }}/">{{ post.title }}</a>
+          <a href="/{{ slug | url }}/">{{ post.title }}</a>
         </h2>
       </div>
 
