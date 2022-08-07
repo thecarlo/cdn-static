@@ -1,29 +1,11 @@
 module.exports = function (grunt) {
   grunt.initConfig({
     cssmin: {
-      options: {},
       target: {
         files: [
           {
             expand: true,
-            src: ['dist/**/*.css'],
-            dest: '',
-          },
-        ],
-      },
-    },
-
-    htmlmin: {
-      dist: {
-        options: {
-          removeComments: true,
-          collapseWhitespace: true,
-          ignoreCustomFragments: [],
-        },
-        files: [
-          {
-            expand: true,
-            src: ['dist/**/*.html'],
+            src: ['dist/assets/css/*.css', '!dist/assets/css/*.min.css'],
             dest: '',
           },
         ],
@@ -32,7 +14,6 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-  grunt.registerTask('default', ['cssmin', 'htmlmin']);
+  grunt.registerTask('default', ['cssmin']);
 };

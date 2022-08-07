@@ -1,0 +1,42 @@
+version: 2.1
+
+jobs:
+  Publish-Site:
+    docker:
+      - image: cimg/node:18.2.0
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
+
+    steps:
+      - checkout
+
+      - run:
+          name: npm install
+          command: npm install
+
+      - run:
+          name: generate static pages
+          command: npm run build
+
+      # - run:
+      #     name: install grunt
+      #     command: npm install grunt grunt-cli -g
+
+      # - run:
+      #     name: grunt tasks
+      #     command: grunt
+
+      - run:
+          name: Netlify install
+          command: npm install netlify-cli -g
+
+      - run:
+          name: Netlify deploy
+          command: netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir dist
+
+      - run: npx wrangler pages publish dist --project-name $CLOUDFLARE_PAGES_PROJECT_NAME
+workflows:
+  Publish-Site-Workflow:
+    jobs:
+      - Publish-Site

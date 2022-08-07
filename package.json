@@ -7,8 +7,7 @@
     "start": "npx eleventy --serve",
     "serve": "npx lite-server --baseDir=dist",
     "build": "npm run clean && npx eleventy && npx grunt",
-    "clean": "rimraf dist/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist/"
   },
   "keywords": [],
   "author": "",
