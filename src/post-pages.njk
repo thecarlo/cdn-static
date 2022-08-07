@@ -16,7 +16,7 @@ title: post.title
       <div class="publish-date">Published on {{ post.publishDate }}</div>
 
       {% if post.image !== "" %}
-      <img src="/assets/images/{{post.image}}" alt="an image" />
+      <img src="{{ '/assets/images/' | url }}{{post.image}}" alt="an image" />
       {% endif %}
 
       <p>{{ post.body | safe }}</p>
