@@ -1,5 +1,6 @@
 version: 2.1
-
+orbs:
+  aws-s3: circleci/aws-s3@3.0.0
 jobs:
   Publish-Site:
     docker:
@@ -19,13 +20,22 @@ jobs:
           name: generate static pages
           command: npm run build
 
-      # - run:
-      #     name: install grunt
-      #     command: npm install grunt grunt-cli -g
+      - run:
+          name: install grunt
+          command: npm install grunt grunt-cli -g
 
-      # - run:
-      #     name: grunt tasks
-      #     command: grunt
+      - run:
+          name: grunt tasks
+          command: grunt
+
+      - aws-s3/sync:
+          arguments: |
+            --cache-control "max-age=31536000"
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          from: dist
+          to: 's3://static-site-aws-carlo-van'
 
       - run:
           name: Netlify install
