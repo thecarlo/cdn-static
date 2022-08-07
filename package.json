@@ -7,7 +7,7 @@
     "start": "npx eleventy --serve",
     "serve": "npx lite-server --baseDir=dist",
     "build": "npm run clean && npx eleventy && npx grunt",
-    "build:github-pages": "npm run clean && npx eleventy --pathprefix 'foo' && npx grunt",
+    "build:github-pages": "npm run clean && npx eleventy --pathprefix 'cdn-static' && npx grunt",
     "clean": "rimraf dist/"
   },
   "keywords": [],
